@@ -73,8 +73,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.nikunjbacancy'
-                artifactId = 'android-sdk'
-                version = '12.0.0'
+                artifactId = 'android-library'
+                version = '2.0.0'
             }
         }
     }
