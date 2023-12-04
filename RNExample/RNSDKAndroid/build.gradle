@@ -16,6 +16,8 @@ android {
     defaultConfig {
         minSdk 24
         targetSdk 33
+        versionCode 3
+        versionName "3.0"
 
 //        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 //        consumerProguardFiles "consumer-rules.pro"
@@ -74,7 +76,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.nikunjbacancy'
                 artifactId = 'android-library'
-                version = '2.0.0'
+                version = '3.0'
             }
         }
     }
