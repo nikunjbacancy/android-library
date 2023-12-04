@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+}
+
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+android {
+    namespace 'com.example.rnsdkandroid'
+    compileSdk 33
+    buildToolsVersion '33.0.0'
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 33
+
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        consumerProguardFiles "consumer-rules.pro"
+    }
+
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+//    kotlinOptions {
+//        jvmTarget = '1.8'
+//    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.6.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    api "com.facebook.infer.annotation:infer-annotation:0.11.2"
+    api "javax.inject:javax.inject:1"
+    //noinspection GradleDependency
+    api "androidx.appcompat:appcompat:1.0.2"
+    api "com.facebook.fresco:fresco:2.0.0"
+    api "com.facebook.fresco:imagepipeline-okhttp3:2.0.0"
+    api "com.facebook.soloader:soloader:0.6.0"
+    api "com.google.code.findbugs:jsr305:3.0.2"
+    api "com.squareup.okhttp3:okhttp:3.12.1"
+    api "com.squareup.okhttp3:okhttp-urlconnection:3.12.1"
+    api "com.squareup.okio:okio:1.15.0"
+
+    String str = new File("${rootDir}/RNSDKAndroid/libs.txt").getText("UTF-8")
+    List libs = str.tokenize("\n")
+    libs.each {
+        api it
+    }
+
+    api "com.github.nikunjbacancy:react-native-sdk-android-libs:2.0.0"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.nikunjbacancy'
+                artifactId = 'android-sdk'
+                version = '12.0.0'
+            }
+        }
+    }
+}
+
