@@ -12,6 +12,6 @@
 //        mavenCentral()
 //    }
 //}
-rootProject.name = "RNExample"
+//rootProject.name = "RNExample"
 include ':app'
 include ':RNSDKAndroid'

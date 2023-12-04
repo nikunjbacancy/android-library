@@ -1,11 +1,56 @@
-//// Top-level build file where you can add configuration options common to all sub-projects/modules.
-//plugins {
-//    id 'com.android.application' version '7.4.1' apply false
-//    id 'com.android.library' version '7.4.1' apply false
-//    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+////// Top-level build file where you can add configuration options common to all sub-projects/modules.
+////plugins {
+////    id 'com.android.application' version '7.4.1' apply false
+////    id 'com.android.library' version '7.4.1' apply false
+////    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+////}
+//
+//apply plugin: 'maven-publish'
+//
+//buildscript {
+//    ext {
+//        kotlin_version = '1.7.20'
+//    }
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath('com.android.tools.build:gradle:4.2.1')
+//        classpath 'com.google.gms:google-services:4.3.5'
+//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//        classpath 'com.google.firebase:firebase-appdistribution-gradle:2.1.0'
+//        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.1'
+//
+//    }
 //}
-
-apply plugin: 'maven-publish'
+//
+//allprojects {
+//    repositories {
+//        google()
+//        mavenCentral()
+//        maven {
+//            url "https://jitpack.io"
+//            credentials {
+//                username = "nikunjbacancy"
+//                password = "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"
+//            }
+//        }
+//    }
+//}
+//
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            // Creates a Maven publication called "release".
+//            release(MavenPublication) {
+//                groupId = 'com.github.nikunjbacancy'
+//                artifactId = 'android-library'
+//                version = '4.0.0'
+//            }
+//        }
+//    }
+//}
 
 buildscript {
     ext {
@@ -17,11 +62,7 @@ buildscript {
     }
     dependencies {
         classpath('com.android.tools.build:gradle:4.2.1')
-        classpath 'com.google.gms:google-services:4.3.5'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.firebase:firebase-appdistribution-gradle:2.1.0'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.1'
-
     }
 }
 
@@ -29,25 +70,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven {
-            url "https://jitpack.io"
-            credentials {
-                username = "nikunjbacancy"
-                password = "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"
-            }
-        }
-    }
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                groupId = 'com.github.nikunjbacancy'
-                artifactId = 'android-library'
-                version = '4.0.0'
-            }
-        }
+        maven { url "https://jitpack.io" }
     }
 }

@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.policepriority.incidentcode'
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.policepriority.incidentcode"
-        minSdk 24
-        targetSdk 33
+        minSdk 21
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -43,10 +43,10 @@ dependencies {
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     implementation project(":RNSDKAndroid")
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+//    implementation 'androidx.appcompat:appcompat:1.6.1'
+//    implementation 'com.google.android.material:material:1.4.0'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
 
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'
+//apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.firebase.crashlytics'
