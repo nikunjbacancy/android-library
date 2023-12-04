@@ -5,6 +5,8 @@
 //    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
 //}
 
+apply plugin: 'maven-publish'
+
 buildscript {
     ext {
         kotlin_version = '1.7.20'
@@ -32,6 +34,19 @@ allprojects {
             credentials {
                 username = "nikunjbacancy"
                 password = "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"
+            }
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                groupId = 'com.github.nikunjbacancy'
+                artifactId = 'android-library'
+                version = '4.0.0'
             }
         }
     }
