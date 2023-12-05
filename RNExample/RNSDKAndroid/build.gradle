@@ -124,4 +124,7 @@ dependencies {
     }
 
     api "com.github.nikunjbacancy:react-native-sdk-android-libs:2.0.0"
+
+//    implementation 'com.github.nikunjbacancy.react-native-sdk-android-libs:2.0.0'
+
 }
